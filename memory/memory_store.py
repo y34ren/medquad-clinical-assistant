@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import asyncio
 from concurrent.futures import Future, ThreadPoolExecutor
+import inspect
 import json
 import os
 from pathlib import Path
@@ -47,6 +48,22 @@ except ImportError:  # pragma: no cover
         class InMemorySessionService:  # type: ignore[no-redef]
             def __init__(self) -> None:
                 self._sessions: Dict[str, Session] = {}
+
+            def get_session_sync(self, *, app_name: str, user_id: str, session_id: str) -> Optional[Session]:
+                return self._sessions.get(f"{app_name}:{user_id}:{session_id}")
+
+            def create_session_sync(
+                self,
+                *,
+                app_name: str,
+                user_id: str,
+                session_id: Optional[str] = None,
+                state: Optional[Dict[str, Any]] = None,
+            ) -> Session:
+                sid = session_id or "default-session"
+                sess = Session(session_id=sid, app_name=app_name, user_id=user_id, state=state)
+                self._sessions[f"{app_name}:{user_id}:{sid}"] = sess
+                return sess
 
 try:
     from google.adk.apps.app import EventsCompactionConfig  # type: ignore[import-not-found]
@@ -793,7 +810,24 @@ class ADKSessionServiceAdapter:
         initial_state: Optional[Dict[str, Any]] = None,
     ) -> Session:
         """Retrieve or create an ADK `Session` synchronized with SQLite persistent storage."""
-        existing_adk = self.adk_session_service.get_session(session_id)
+        app_name = "medquad-clinical-assistant"
+        if hasattr(self.adk_session_service, "get_session_sync"):
+            existing_adk = self.adk_session_service.get_session_sync(
+                app_name=app_name,
+                user_id=user_id,
+                session_id=session_id,
+            )
+        elif inspect.iscoroutinefunction(self.adk_session_service.get_session):  # pragma: no cover
+            existing_adk = asyncio.run(
+                self.adk_session_service.get_session(
+                    app_name=app_name,
+                    user_id=user_id,
+                    session_id=session_id,
+                )
+            )
+        else:
+            existing_adk = self.adk_session_service.get_session(session_id)
+
         if existing_adk is not None:
             return existing_adk
 
@@ -802,11 +836,28 @@ class ADKSessionServiceAdapter:
         if persisted and persisted.get("state"):
             merged_state.update(persisted["state"])
 
-        session = self.adk_session_service.create_session(
-            app_name="medquad-clinical-assistant",
-            user_id=user_id,
-            session_id=session_id,
-            state=merged_state,
-        )
+        if hasattr(self.adk_session_service, "create_session_sync"):
+            session = self.adk_session_service.create_session_sync(
+                app_name=app_name,
+                user_id=user_id,
+                session_id=session_id,
+                state=merged_state,
+            )
+        elif inspect.iscoroutinefunction(self.adk_session_service.create_session):  # pragma: no cover
+            session = asyncio.run(
+                self.adk_session_service.create_session(
+                    app_name=app_name,
+                    user_id=user_id,
+                    session_id=session_id,
+                    state=merged_state,
+                )
+            )
+        else:
+            session = self.adk_session_service.create_session(
+                app_name=app_name,
+                user_id=user_id,
+                session_id=session_id,
+                state=merged_state,
+            )
         self.memory_store.save_session_state(session_id=session_id, state=merged_state, user_id=user_id)
         return session

@@ -828,6 +828,6 @@ CLINICAL_TOOLS: List[Callable[..., Dict[str, Any]]] = [
 ]
 
 ADK_FUNCTION_TOOLS: List[FunctionTool] = [
-    FunctionTool(func=tool_fn, name=tool_fn.__name__, description=tool_fn.__doc__)
+    FunctionTool(tool_fn)
     for tool_fn in CLINICAL_TOOLS
 ]
