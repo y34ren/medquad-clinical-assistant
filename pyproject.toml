@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medquad-clinical-assistant"
+version = "1.0.0"
+description = "NIH Clinical Center MedQuAD Clinical Assistant — Google ADK Multi-Agent System (95/95 L200 AgentOps Architecture)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "NIH Clinical Center Informatics & FDE HCLS Engineering"}
+]
+dependencies = [
+    "google-adk>=1.0.0",
+    "google-genai>=1.0.0",
+    "google-cloud-secret-manager>=2.20.0",
+    "google-cloud-logging>=3.10.0",
+    "google-cloud-trace>=1.13.0",
+    "opentelemetry-api>=1.25.0",
+    "opentelemetry-sdk>=1.25.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.9.0",
+    "httpx>=0.27.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tools*", "memory*", "orchestrator*", "observability*", "secrets*", "eval*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+

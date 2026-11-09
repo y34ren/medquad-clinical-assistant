@@ -1,0 +1,47 @@
+name: NIH MedQuAD Clinical Assistant — AgentOps CI/CD & Quality Gate
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+permissions:
+  contents: read
+
+jobs:
+  agentops-quality-gate:
+    name: Unit Tests, Secret Hygiene & Golden Evaluation Gate (95/95 Rubric)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Verify Zero Hardcoded Credentials
+        run: |
+          ! grep -rnE "AIza[0-9A-Za-z-_]{35}|ya29\.[0-9A-Za-z\-_]+" tools/ memory/ orchestrator/ observability/ secrets/ eval/ app.py
+
+      - name: Execute Unit Test Suite
+        run: |
+          python3 -m unittest discover -s tests -p "test_*.py" -v
+
+      - name: Execute Golden Clinical Evaluation & 95/95 AgentOps Rubric Harness
+        run: |
+          python3 eval/eval_harness.py
+
+      - name: Upload Golden Evaluation Report Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nih-medquad-eval-report
+          path: eval_report.json

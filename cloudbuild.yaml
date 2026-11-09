@@ -1,0 +1,72 @@
+# Google Cloud Build CI/CD Pipeline for NIH MedQuAD Clinical Assistant
+# Gates production Cloud Run deployment on 100% Unit Test + Golden Evaluation Harness pass
+
+steps:
+  # Step 1: Run Unit Test Suite
+  - name: 'python:3.12-slim'
+    id: 'unit-tests'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        pip install --no-cache-dir -r requirements.txt
+        python3 -m unittest discover -s tests -p "test_*.py" -v
+
+  # Step 2: Run Day 4 Agent Quality Flywheel & 95/95 Rubric Evaluation Gate
+  - name: 'python:3.12-slim'
+    id: 'golden-eval-gate'
+    waitFor: ['unit-tests']
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        pip install --no-cache-dir -r requirements.txt
+        python3 eval/eval_harness.py
+
+  # Step 3: Build Container Image
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'build-image'
+    waitFor: ['golden-eval-gate']
+    args:
+      - 'build'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/medquad-clinical-assistant:$COMMIT_SHA'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/medquad-clinical-assistant:latest'
+      - '.'
+
+  # Step 4: Push Container Image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'push-image'
+    waitFor: ['build-image']
+    args:
+      - 'push'
+      - '--all-tags'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/medquad-clinical-assistant'
+
+  # Step 5: Deploy to Cloud Run with Secret Manager bindings and least-privilege Service Account
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: 'deploy-cloud-run'
+    waitFor: ['push-image']
+    entrypoint: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'medquad-clinical-assistant'
+      - '--image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_AR_REPO}/medquad-clinical-assistant:$COMMIT_SHA'
+      - '--region=${_REGION}'
+      - '--platform=managed'
+      - '--service-account=medquad-agent-sa@$PROJECT_ID.iam.gserviceaccount.com'
+      - '--set-secrets=GEMINI_API_KEY=GEMINI_API_KEY:latest,MEDQUAD_DB_URI=MEDQUAD_DB_URI:latest'
+      - '--no-allow-unauthenticated'
+      - '--min-instances=1'
+      - '--max-instances=10'
+      - '--memory=2Gi'
+      - '--cpu=2'
+
+substitutions:
+  _REGION: 'us-central1'
+  _AR_REPO: 'nih-clinical-agents'
+
+options:
+  logging: CLOUD_LOGGING_ONLY

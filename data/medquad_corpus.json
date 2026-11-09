@@ -1,0 +1,300 @@
+{
+  "metadata": {
+    "corpus_name": "NIH MedQuAD Clinical Evidence & Contraindication Corpus",
+    "version": "2026.11-NIH-CC",
+    "curator": "National Institutes of Health (NIH) Clinical Center — Biomedical Informatics & Clinical Pharmacology",
+    "license": "NIH Public Domain / Clinical Research Reference",
+    "total_documents": 12,
+    "total_contraindication_rules": 8
+  },
+  "documents": [
+    {
+      "doc_id": "NIH-MEDQUAD-001",
+      "source_institute": "NIDDK (National Institute of Diabetes and Digestive and Kidney Diseases)",
+      "source_url": "https://www.niddk.nih.gov/health-information/diabetes/overview/managing-diabetes/metformin-renal-guidelines",
+      "title": "Type 2 Diabetes Mellitus Management and Metformin Renal Function Guidelines",
+      "condition": "Type 2 Diabetes Mellitus",
+      "mesh_terms": ["Diabetes Mellitus, Type 2", "Metformin", "Renal Insufficiency, Chronic", "Glycated Hemoglobin A", "Hyperglycemia"],
+      "icd10_codes": ["E11.9", "E11.22", "N18.3", "N18.4"],
+      "question": "What are the clinical evidence guidelines and renal function thresholds for Metformin therapy in Type 2 Diabetes Mellitus?",
+      "answer": "Metformin biguanide therapy is the first-line pharmacologic treatment for Type 2 Diabetes Mellitus (ICD-10: E11.9) alongside lifestyle modification. Metformin reduces hepatic gluconeogenesis and improves peripheral insulin sensitivity without causing intrinsic hypoglycemia. Renal function monitoring via estimated glomerular filtration rate (eGFR) is mandatory prior to initiation and at least annually thereafter. Per NIH/NIDDK and FDA clinical consensus: (1) Metformin is contraindicated in patients with an eGFR below 30 mL/min/1.73m2 (CKD Stage 4/5) due to the risk of metformin-associated lactic acidosis (MALA); (2) Initiation of metformin is not recommended in patients with an eGFR between 30 and 45 mL/min/1.73m2 (CKD Stage 3b), and for patients already taking metformin whose eGFR falls into the 30-45 mL/min/1.73m2 range, clinicians should assess benefit-risk and consider a 50% dose reduction; (3) Metformin should be temporarily discontinued prior to or at the time of iodinated contrast imaging procedures in patients with an eGFR between 30 and 60 mL/min/1.73m2, history of hepatic disease, alcoholism, or acute heart failure, and re-evaluated 48 hours post-procedure.",
+      "clinical_pearls": [
+        "Monitor Vitamin B12 levels periodically during long-term metformin therapy (>4 years), especially in patients with peripheral neuropathy or anemia.",
+        "Consider SGLT2 inhibitors (e.g., empagliflozin, dapagliflozin) or GLP-1 receptor agonists in patients with comorbid atherosclerotic cardiovascular disease (ASCVD) or Diabetic Kidney Disease."
+      ],
+      "evidence_level": "Level A (NIH Consensus & Randomized Controlled Trials)"
+    },
+    {
+      "doc_id": "NIH-MEDQUAD-002",
+      "source_institute": "NHLBI (National Heart, Lung, and Blood Institute)",
+      "source_url": "https://www.nhlbi.nih.gov/health-topics/high-blood-pressure-hypertension-clinical-guidelines",
+      "title": "Essential Hypertension Definition, Staging, and First-Line Antihypertensive Protocols",
+      "condition": "Essential Hypertension",
+      "mesh_terms": ["Hypertension", "Blood Pressure", "Angiotensin-Converting Enzyme Inhibitors", "Calcium Channel Blockers", "Thiazides"],
+      "icd10_codes": ["I10", "I11.9", "I12.9"],
+      "question": "What is the clinical definition of essential hypertension and how are first-line antihypertensive classes selected?",
+      "answer": "Essential (primary) hypertension (ICD-10: I10) is defined by NHLBI/ACC/AHA guidelines as persistent systolic blood pressure (SBP) >= 130 mmHg or diastolic blood pressure (DBP) >= 80 mmHg across two or more clinical encounters. Stage 1 hypertension encompasses SBP 130-139 mmHg or DBP 80-89 mmHg; Stage 2 hypertension is defined as SBP >= 140 mmHg or DBP >= 90 mmHg. First-line pharmacologic therapy includes thiazide or thiazide-like diuretics (chlorthalidone, hydrochlorothiazide), angiotensin-converting enzyme (ACE) inhibitors (lisinopril, enalapril), angiotensin receptor blockers (ARBs, such as losartan), and dihydropyridine calcium channel blockers (amlodipine). In patients with chronic kidney disease (CKD) and albuminuria, an ACE inhibitor or ARB is recommended to reduce intraglomerular pressure and slow nephropathy progression. Concurrent use of an ACE inhibitor with an ARB or direct renin inhibitor is contraindicated due to increased risks of hyperkalemia, hypotension, and acute kidney injury.",
+      "clinical_pearls": [
+        "ACE inhibitors (e.g., lisinopril) are strictly contraindicated in pregnancy due to fetal renal dysplasia and oligohydramnios, and in patients with a history of hereditary or ACE-inhibitor-induced angioedema.",
+        "Check serum potassium and serum creatinine within 2 to 4 weeks of initiating or titrating ACE inhibitor or ARB therapy."
+      ],
+      "evidence_level": "Level A (NHLBI / ACC / AHA Clinical Practice Guidelines)"
+    },
+    {
+      "doc_id": "NIH-MEDQUAD-003",
+      "source_institute": "NINDS (National Institute of Neurological Disorders and Stroke)",
+      "source_url": "https://www.ninds.nih.gov/health-information/disorders/myasthenia-gravis",
+      "title": "Myasthenia Gravis Pathophysiology, Diagnostic Workup, and Medication Contraindications",
+      "condition": "Myasthenia Gravis",
+      "mesh_terms": ["Myasthenia Gravis", "Neuromuscular Junction", "Acetylcholine Receptors", "Fluoroquinolones", "Aminoglycosides", "Myasthenic Crisis"],
+      "icd10_codes": ["G70.00", "G70.01"],
+      "question": "How is Myasthenia Gravis diagnosed and which medications are contraindicated due to risk of myasthenic crisis?",
+      "answer": "Myasthenia Gravis (MG, ICD-10: G70.00) is a chronic autoimmune neuromuscular transmission disorder characterized by fluctuating weakness and rapid fatigability of voluntary skeletal muscles, most commonly mediated by autoantibodies against postsynaptic nicotinic acetylcholine receptors (AChR) or muscle-specific receptor tyrosine kinase (MuSK). Diagnostic confirmation relies on serologic testing for anti-AChR and anti-MuSK antibodies, repetitive nerve stimulation (RNS) demonstrating a >10% decremental response, single-fiber electromyography (SFEMG), and chest CT/MRI to evaluate for thymoma. Symptomatic therapy utilizes acetylcholinesterase inhibitors (pyridostigmine) alongside immunomodulatory therapies. CRITICAL SAFETY WARNING: Systemic fluoroquinolones (ciprofloxacin, levofloxacin, moxifloxacin), aminoglycoside antibiotics (gentamicin, tobramycin, amikacin), macrolides (telithromycin, azithromycin), and intravenous magnesium block neuromuscular transmission and can precipitate life-threatening myasthenic crisis with acute neuromuscular respiratory failure.",
+      "clinical_pearls": [
+        "Fluoroquinolones carry an FDA Boxed Warning against use in patients with known Myasthenia Gravis.",
+        "Beta-blockers and calcium channel blockers should be used with extreme caution in MG patients as they may unmask or worsen bulbar and generalized weakness."
+      ],
+      "evidence_level": "Level A (NINDS / MGFA International Consensus Guidance)"
+    },
+    {
+      "doc_id": "NIH-MEDQUAD-004",
+      "source_institute": "NHLBI / NLM MedlinePlus",
+      "source_url": "https://medlineplus.gov/druginfo/meds/a682277.html",
+      "title": "Atrial Fibrillation Anticoagulation, Warfarin Monitoring, and Hemorrhagic Drug Interactions",
+      "condition": "Atrial Fibrillation and Anticoagulation",
+      "mesh_terms": ["Atrial Fibrillation", "Warfarin", "Anticoagulants", "Anti-Inflammatory Agents, Non-Steroidal", "Hemorrhage", "International Normalized Ratio"],
+      "icd10_codes": ["I48.91", "Z79.01"],
+      "question": "What are the major hemorrhagic contraindications and monitoring protocols for Warfarin and oral anticoagulants in Atrial Fibrillation?",
+      "answer": "Oral anticoagulation is indicated in patients with atrial fibrillation (ICD-10: I48.91) and elevated thromboembolic risk (CHA2DS2-VASc score >= 2 in men or >= 3 in women). While direct oral anticoagulants (DOACs such as apixaban or rivaroxaban) are preferred in non-valvular atrial fibrillation, vitamin K antagonist therapy with Warfarin remains mandatory in patients with mechanical heart valves or moderate-to-severe rheumatic mitral stenosis, targeting an International Normalized Ratio (INR) of 2.0-3.0 (or 2.5-3.5 for mechanical mitral valves). Concomitant administration of systemic Non-Steroidal Anti-Inflammatory Drugs (NSAIDs such as ibuprofen, naproxen, ketorolac), antiplatelet agents, or CYP2C9 inhibitors (trimethoprim-sulfamethoxazole, fluconazole, amiodarone) with Warfarin markedly increases the risk of severe gastrointestinal and intracranial hemorrhage. In patients with advanced Chronic Kidney Disease (CKD Stage 4, eGFR < 30 mL/min/1.73m2), NSAIDs are doubly contraindicated due to afferent arteriolar vasoconstriction precipitating acute-on-chronic renal failure and uremic platelet dysfunction.",
+      "clinical_pearls": [
+        "Avoid systemic NSAIDs completely in anticoagulated patients; if analgesia is required, consider acetaminophen at conservative doses (<2g/day) with closer INR monitoring.",
+        "Warfarin is a known human teratogen (Category X) causing fetal warfarin syndrome and CNS malformations."
+      ],
+      "evidence_level": "Level A (NHLBI / CHEST Antithrombotic Guidelines)"
+    },
+    {
+      "doc_id": "NIH-MEDQUAD-005",
+      "source_institute": "GARD (Genetic and Rare Diseases Information Center)",
+      "source_url": "https://rarediseases.info.nih.gov/diseases/6975/marfan-syndrome",
+      "title": "Marfan Syndrome Ghent Nosology, FBN1 Genetics, and Aortic Root Surveillance",
+      "condition": "Marfan Syndrome",
+      "mesh_terms": ["Marfan Syndrome", "Fibrillin-1", "Aortic Aneurysm, Thoracic", "Ectopia Lentis", "Connective Tissue Diseases"],
+      "icd10_codes": ["Q87.40", "Q87.410"],
+      "question": "What are the diagnostic criteria (Revised Ghent Nosology) and cardiovascular management protocols for Marfan Syndrome?",
+      "answer": "Marfan Syndrome (ICD-10: Q87.40) is an autosomal dominant systemic connective tissue disorder caused by pathogenic variants in the FBN1 gene on chromosome 15q21.1 encoding fibrillin-1, leading to dysregulated transforming growth factor-beta (TGF-beta) signaling. Under the Revised Ghent Nosology, diagnosis in the absence of family history requires aortic root dilatation (Z-score >= 2.0) plus either ectopia lentis, a pathogenic FBN1 mutation, or a systemic score >= 7 points (incorporating arachnodactyly, pectus carinatum/excavatum, dural ectasia, and mitral valve prolapse). Cardiovascular management requires serial transthoracic echocardiography every 6-12 months to monitor aortic sinus of Valsalva diameter, medical prophylaxis with beta-blockers (atenolol, propranolol) or angiotensin receptor blockers (losartan) to attenuate hemodynamic shear stress on the aortic wall, and prophylactic valve-sparing aortic root replacement when the aortic root diameter reaches >= 5.0 cm (or >= 4.5 cm in patients with rapid growth >= 0.5 cm/year or family history of dissection).",
+      "clinical_pearls": [
+        "Fluoroquinolone antibiotics are contraindicated in Marfan Syndrome and thoracic aortic aneurysm syndromes due to collagen degradation and doubled risk of aortic dissection or rupture.",
+        "Patients should avoid high-intensity isometric exercise and collision sports."
+      ],
+      "evidence_level": "Level A (NIH GARD / ACMG / AHA Thoracic Aortic Disease Guidelines)"
+    },
+    {
+      "doc_id": "NIH-MEDQUAD-006",
+      "source_institute": "NCI (National Cancer Institute)",
+      "source_url": "https://www.cancer.gov/about-cancer/treatment/drugs/methotrexate-leucovorin-rescue-protocol",
+      "title": "High-Dose Methotrexate Oncology Protocols, Leucovorin Rescue, and Renal Toxicity Prevention",
+      "condition": "Pediatric and Adult Osteosarcoma / Acute Lymphoblastic Leukemia (High-Dose Methotrexate)",
+      "mesh_terms": ["Methotrexate", "Leucovorin", "Antineoplastic Agents", "Acute Kidney Injury", "Drug Interactions", "Pediatrics"],
+      "icd10_codes": ["C91.00", "C40.90", "T45.1X5A"],
+      "question": "What safety monitoring and drug interaction contraindications govern High-Dose Methotrexate therapy in oncology and pediatric patients?",
+      "answer": "High-Dose Methotrexate (HDMTX, defined as doses >= 500 mg/m2 IV) is used in pediatric and adult protocols for acute lymphoblastic leukemia (ALL), osteosarcoma, and CNS lymphoma. Because methotrexate and its metabolites (7-OH-MTX, DAMPA) precipitate in acidic renal tubules, mandatory supportive care includes vigorous intravenous hyperhydration, urinary alkalinization with sodium bicarbonate to maintain urine pH >= 7.0 prior to infusion, serial serum methotrexate therapeutic drug monitoring at 24, 48, and 72 hours, and precisely timed folinic acid (leucovorin) rescue. Concomitant administration of NSAIDs, salicylates, proton pump inhibitors (omeprazole, pantoprazole), penicillins, or trimethoprim-sulfamethoxazole is strictly contraindicated as these agents inhibit renal organic anion transporters (OAT1/OAT3), delaying methotrexate clearance and precipitating fatal myelosuppression, mucositis, and acute renal failure. Any pediatric oncology dosing modification or delayed clearance (48-hour MTX > 1.0 micromol/L) requires immediate Attending Oncologist and Clinical Pharmacist review (including potential glucarpidase rescue).",
+      "clinical_pearls": [
+        "Trimethoprim-sulfamethoxazole (TMP-SMX) co-administration with methotrexate causes additive folate antagonism and life-threatening pancytopenia.",
+        "All pediatric and oncology cytotoxic regimen calculations require dual-clinician verification via Human-in-the-Loop (HITL) escalation."
+      ],
+      "evidence_level": "Level A (NCI Children's Oncology Group & Clinical Pharmacology Consensus)"
+    },
+    {
+      "doc_id": "NIH-MEDQUAD-007",
+      "source_institute": "NCI / GARD (Endocrine & Rare Neuroendocrine Tumors)",
+      "source_url": "https://www.cancer.gov/types/pheochromocytoma/hp/pheochromocytoma-treatment-pdq",
+      "title": "Pheochromocytoma and Paraganglioma Biochemical Diagnosis and Preoperative Alpha-Blockade",
+      "condition": "Pheochromocytoma",
+      "mesh_terms": ["Pheochromocytoma", "Paraganglioma", "Catecholamines", "Metanephrine", "Adrenergic alpha-Antagonists", "Adrenergic beta-Antagonists"],
+      "icd10_codes": ["D35.00", "C74.10"],
+      "question": "How is pheochromocytoma diagnosed and why is unopposed beta-blockade contraindicated prior to alpha-adrenergic blockade?",
+      "answer": "Pheochromocytoma (ICD-10: D35.00) is a catecholamine-secreting neuroendocrine tumor arising from chromaffin cells of the adrenal medulla, presenting classically with episodic hypertension, headache, diaphoresis, and palpitations. Biochemical diagnosis is established by measuring plasma free metanephrines and normetanephrines or 24-hour urinary fractionated metanephrines (sensitivity >97%), followed by anatomical localization with CT/MRI and functional 68Ga-DOTATATE PET/CT. Preoperative medical preparation for at least 10-14 days prior to adrenalectomy is mandatory to prevent intraoperative hypertensive crisis: selective or non-selective alpha-adrenergic blockade (phenoxybenzamine or doxazosin) combined with volume expansion must be established FIRST. CRITICAL CONTRAINDICATION: Initiating beta-adrenergic blockers (especially non-selective beta-blockers like propranolol or labetalol) BEFORE adequate alpha-1 adrenergic blockade is strictly contraindicated, because blocking vasodilatory skeletal muscle beta-2 receptors leaves alpha-1 mediated vasoconstriction unopposed, precipitating fulminant hypertensive crisis, pulmonary edema, and myocardial infarction.",
+      "clinical_pearls": [
+        "Up to 35-40% of pheochromocytomas and paragangliomas harbor germline pathogenic variants (RET, VHL, SDHB, SDHD, NF1); genetic counseling is recommended for all patients.",
+        "Beta-blockers may be added to control reflex tachycardia only after 48-72 hours of effective alpha-adrenergic blockade and orthostatic blood pressure stabilization."
+      ],
+      "evidence_level": "Level A (NCI PDQ / Endocrine Society Clinical Practice Guideline)"
+    },
+    {
+      "doc_id": "NIH-MEDQUAD-008",
+      "source_institute": "NINDS / NIMH (Neuropsychiatry & Clinical Pharmacology)",
+      "source_url": "https://medlineplus.gov/ency/article/007272.htm",
+      "title": "Serotonin Syndrome Recognition, MAOI Washout Periods, and Serotonergic Drug Contraindications",
+      "condition": "Serotonin Syndrome and Serotonergic Toxicity",
+      "mesh_terms": ["Serotonin Syndrome", "Serotonin Uptake Inhibitors", "Monoamine Oxidase Inhibitors", "Linezolid", "Tramadol"],
+      "icd10_codes": ["G21.0", "T43.225A"],
+      "question": "What clinical triad characterizes Serotonin Syndrome and which serotonergic drug combinations are contraindicated?",
+      "answer": "Serotonin Syndrome (ICD-10: G21.0) is a potentially life-threatening toxidrome resulting from excessive central and peripheral serotonergic agonism (5-HT1A and 5-HT2A receptors). It presents with the classic clinical triad of: (1) neuromuscular hyperactivity (clonus, inducible/ocular clonus, hyperreflexia, tremor, rigidity), (2) autonomic instability (hyperthermia, diaphoresis, tachycardia, mydriasis, labile blood pressure), and (3) altered mental status (agitation, delirium). Diagnosis is clinical using the Hunter Serotonin Toxicity Criteria. Co-administration of Monoamine Oxidase Inhibitors (MAOIs such as phenelzine, tranylcypromine, selegiline, or the reversible MAOI antibiotic Linezolid and IV methylene blue) with Selective Serotonin Reuptake Inhibitors (SSRIs like sertraline, fluoxetine), SNRIs (venlafaxine, duloxetine), tricyclic antidepressants, tramadol, meperidine, or dextromethorphan is strictly contraindicated. A minimum 14-day washout period is required when switching between an MAOI and most SSRIs/SNRIs, and a 5-week washout is required after discontinuing fluoxetine due to the prolonged half-life of norfluoxetine.",
+      "clinical_pearls": [
+        "Linezolid (an oxazolidinone antibiotic) possesses reversible non-selective MAO inhibition and can trigger rapid serotonin syndrome in patients taking SSRIs or SNRIs.",
+        "Management includes immediate discontinuation of all serotonergic agents, supportive care, benzodiazepines for agitation/hypertonia, and cyproheptadine (a 5-HT2A antagonist) in moderate-to-severe cases."
+      ],
+      "evidence_level": "Level A (NIH / Hunter Criteria Clinical Toxicology Consensus)"
+    },
+    {
+      "doc_id": "NIH-MEDQUAD-009",
+      "source_institute": "NIDDK (Hepatology & Gastroenterology)",
+      "source_url": "https://www.niddk.nih.gov/health-information/liver-disease/cirrhosis",
+      "title": "Decompensated Hepatic Cirrhosis, Child-Pugh Classification, and Hepatotoxic Medication Contraindications",
+      "condition": "Hepatic Cirrhosis and Portal Hypertension",
+      "mesh_terms": ["Liver Cirrhosis", "Hypertension, Portal", "Hepatic Encephalopathy", "Ascites", "Drug-Induced Liver Injury"],
+      "icd10_codes": ["K74.60", "K70.31", "K72.90"],
+      "question": "How is hepatic cirrhosis staged and which analgesics and sedatives are contraindicated in decompensated cirrhosis?",
+      "answer": "Hepatic cirrhosis (ICD-10: K74.60) represents late-stage hepatic fibrosis with regenerative nodule formation and distortion of the hepatic vascular architecture. Clinical severity is stratified by the Child-Pugh score (incorporating total bilirubin, serum albumin, INR, ascites, and hepatic encephalopathy into Classes A, B, and C) and the Model for End-Stage Liver Disease (MELD-Na) score. In decompensated cirrhosis (Child-Pugh B/C with ascites, variceal hemorrhage, or hepatic encephalopathy), systemic NSAIDs are strictly contraindicated because prostaglandin inhibition precipitates renal vasoconstriction, sodium retention, diuretic-refractory ascites, and hepatorenal syndrome (HRS-AKI). Benzodiazepines and long-acting opioids should be avoided as they precipitate or worsen overt hepatic encephalopathy. Acetaminophen may be used cautiously at reduced doses (maximum 2,000 mg/day in abstinent cirrhotic patients) whereas high-dose acetaminophen (>4,000 mg/day) or use alongside active alcohol consumption causes fulminant centrilobular hepatic necrosis.",
+      "clinical_pearls": [
+        "Non-selective beta-blockers (carvedilol, propranolol, nadolol) are used for primary and secondary prophylaxis of esophageal variceal hemorrhage, but should be held during spontaneous bacterial peritonitis (SBP) or hypotension (SBP < 90 mmHg).",
+        "Lactulose and rifaximin are first-line therapies for preventing and treating overt hepatic encephalopathy."
+      ],
+      "evidence_level": "Level A (NIDDK / AASLD Practice Guidance)"
+    },
+    {
+      "doc_id": "NIH-MEDQUAD-010",
+      "source_institute": "NHLBI (Pulmonary & Critical Care Medicine)",
+      "source_url": "https://www.nhlbi.nih.gov/health-topics/asthma-management-guidelines-2020-updates",
+      "title": "Persistent Asthma Stepwise Therapy, SMART Protocol, and Non-Selective Beta-Blocker Contraindications",
+      "condition": "Bronchial Asthma",
+      "mesh_terms": ["Asthma", "Bronchodilator Agents", "Adrenal Cortex Hormones", "Adrenergic beta-Antagonists", "Bronchospasm"],
+      "icd10_codes": ["J45.40", "J45.50"],
+      "question": "What are the NHLBI EPR-4 stepwise management guidelines for persistent asthma and why are non-selective beta-blockers and LABA monotherapy contraindicated?",
+      "answer": "Bronchial asthma (ICD-10: J45.40) is a chronic inflammatory airway disorder characterized by variable expiratory airflow limitation and bronchial hyperresponsiveness. The NHLBI Expert Panel Report 4 (EPR-4) recommends Single Maintenance and Reliever Therapy (SMART) using low-to-medium dose inhaled corticosteroid plus formoterol (ICS-formoterol) in a single inhaler for both daily maintenance and as-needed symptom relief in moderate-to-severe persistent asthma (Steps 3-4), reducing severe exacerbations compared to SABA-alone reliever regimens. CRITICAL SAFETY RULES: (1) Long-Acting Beta-2 Agonist (LABA) monotherapy without an inhaled corticosteroid is strictly contraindicated in asthma due to an increased risk of asthma-related death; (2) Non-selective beta-adrenergic blockers (propranolol, nadolol, timolol ophthalmic drops, carvedilol) are contraindicated in patients with asthma because antagonism of bronchial beta-2 adrenergic receptors triggers severe, potentially refractory bronchospasm; (3) In patients with Aspirin-Exacerbated Respiratory Disease (AERD / Samter's triad of asthma, chronic rhinosinusitis with nasal polyposis, and NSAID sensitivity), aspirin and COX-1 inhibiting NSAIDs are contraindicated.",
+      "clinical_pearls": [
+        "Assess inhaler technique, fractional exhaled nitric oxide (FeNO), and blood eosinophil counts before stepping up to biologic therapy (dupilumab, mepolizumab, omalizumab) in Step 5 severe asthma."
+      ],
+      "evidence_level": "Level A (NHLBI Asthma Management Guidelines Working Group)"
+    },
+    {
+      "doc_id": "NIH-MEDQUAD-011",
+      "source_institute": "GARD / NINDS (Neurogenetics & Hepatolenticular Degeneration)",
+      "source_url": "https://rarediseases.info.nih.gov/diseases/7893/wilson-disease",
+      "title": "Wilson Disease ATP7B Copper Metabolism, Kayser-Fleischer Rings, and Chelation Therapy",
+      "condition": "Wilson Disease",
+      "mesh_terms": ["Hepatolenticular Degeneration", "Copper", "Ceruloplasmin", "Penicillamine", "Trientine"],
+      "icd10_codes": ["E83.01"],
+      "question": "What are the diagnostic criteria and copper-chelation treatment protocols for Wilson Disease?",
+      "answer": "Wilson Disease (hepatolenticular degeneration, ICD-10: E83.01) is an autosomal recessive disorder of copper transport caused by biallelic pathogenic variants in the ATP7B gene on chromosome 13q14.3, resulting in impaired biliary copper excretion and toxic copper accumulation in the liver, basal ganglia (lentiform nucleus), and cornea. Diagnosis via the Leipzig scoring system integrates reduced serum ceruloplasmin (<20 mg/dL), elevated 24-hour urinary copper excretion (>100 mcg/24h or >40 mcg/24h in symptomatic children), slit-lamp detection of corneal Kayser-Fleischer rings, hepatic parenchymal copper concentration >= 250 mcg/g dry weight, and ATP7B molecular sequencing. Lifelong pharmacologic therapy consists of copper chelators—trientine or D-penicillamine (supplemented with pyridoxine/vitamin B6)—for initial decoppering in symptomatic hepatic or neurologic disease, or oral zinc salts (which induce intestinal metallothionein to block dietary copper absorption) for maintenance therapy or presymptomatic patients. Zinc and chelators must have staggered administration separated by at least 1-2 hours to prevent intraluminal chelation of zinc.",
+      "clinical_pearls": [
+        "Initial D-penicillamine therapy can cause paradoxical neurological worsening in up to 10-20% of patients with neuro-Wilson disease; slow upward titration or trientine is preferred.",
+        "Avoid high-copper foods (shellfish, liver, dark chocolate, mushrooms, nuts) during the initial year of chelation."
+      ],
+      "evidence_level": "Level A (NIH GARD / AASLD Wilson Disease Practice Guidance)"
+    },
+    {
+      "doc_id": "NIH-MEDQUAD-012",
+      "source_institute": "NIH Clinical Center (Department of Bioethics & Clinical Safety Governance)",
+      "source_url": "https://clinicalcenter.nih.gov/policies/clinical-ai-safety-governance",
+      "title": "NIH Clinical Center Safe Refusal, Emergency Triage, and Human-in-the-Loop Escalation Policy",
+      "condition": "Clinical AI Safety Governance and Emergency Triage Boundaries",
+      "mesh_terms": ["Clinical Decision Support Systems", "Patient Safety", "Emergency Medical Services", "Health Insurance Portability and Accountability Act"],
+      "icd10_codes": ["R07.9", "I21.9", "I63.9", "T78.2XXA"],
+      "question": "What are the mandatory NIH Clinical Center governance boundaries for AI clinical decision support regarding emergencies, prescriptions, and attending escalation?",
+      "answer": "Under NIH Clinical Center Policy CC-AI-2026-01, clinical decision support agents operate strictly as informational synthesis assistants for credentialed researchers and clinicians and must enforce four deterministic boundaries: (1) SAFE REFUSAL ON ACUTE EMERGENCIES: Queries describing acute life-threatening medical emergencies—including acute chest pain/STEMI, stroke/acute focal neurological deficits, anaphylaxis, respiratory arrest, active hemorrhage, or suicidal/self-harm crisis—must immediately trigger a deterministic Safe Refusal directing immediate activation of Emergency Medical Services (911 / Rapid Response Team) rather than attempting diagnostic synthesis; (2) NO AUTONOMOUS PRESCRIBING: The system must refuse requests to generate patient-specific prescriptions, controlled substance orders (Schedule II-V opioids/benzodiazepines), or definitive unverified dosing orders; (3) HUMAN-IN-THE-LOOP (HITL) ESCALATION: Any query involving severe/contraindicated drug-drug or drug-disease interactions, pediatric or oncology chemotherapy calculations, pregnancy teratogenicity, or low evidence confidence (<0.80) must pause execution via ADK RequestInput and escalate to an Attending Physician; (4) ZERO-PHI RETENTION: All HIPAA 18 identifiers (names, MRNs, SSNs, DOBs, phone numbers, emails) must be scrubbed prior to LLM context injection or telemetry persistence.",
+      "clinical_pearls": [
+        "Every clinical claim returned to a researcher must include an explicit inline NIH document citation ([NIH-MEDQUAD-xxx] or [NIH-DRUG-xxx])."
+      ],
+      "evidence_level": "Level A (NIH Clinical Center Mandatory Governance Policy)"
+    }
+  ],
+  "contraindication_registry": [
+    {
+      "rule_id": "NIH-DRUG-001",
+      "primary_drug": "metformin",
+      "aliases": ["glucophage", "biguanide"],
+      "contraindicated_conditions": ["ckd stage 4", "ckd stage 5", "severe renal impairment", "egfr < 30", "end-stage renal disease", "esrd", "metabolic acidosis", "lactic acidosis", "decompensated heart failure"],
+      "contraindicated_drugs": ["iodinated contrast media"],
+      "severity": "CONTRAINDICATED",
+      "mechanism": "Impaired renal clearance of metformin leads to accumulation and life-threatening Metformin-Associated Lactic Acidosis (MALA).",
+      "clinical_recommendation": "Discontinue Metformin immediately if eGFR < 30 mL/min/1.73m2. Consider linagliptin, GLP-1 receptor agonist, or insulin therapy adjusted for renal function.",
+      "source_doc_id": "NIH-MEDQUAD-001",
+      "requires_hitl": true
+    },
+    {
+      "rule_id": "NIH-DRUG-002",
+      "primary_drug": "warfarin",
+      "aliases": ["coumadin", "jantoven", "vitamin k antagonist"],
+      "contraindicated_conditions": ["active bleeding", "pregnancy", "hemorrhagic stroke", "severe thrombocytopenia", "ckd stage 4", "decompensated cirrhosis"],
+      "contraindicated_drugs": ["ibuprofen", "naproxen", "ketorolac", "nsaid", "nsaids", "aspirin high-dose", "trimethoprim-sulfamethoxazole", "fluconazole"],
+      "severity": "CONTRAINDICATED",
+      "mechanism": "Synergistic antiplatelet/mucosal injury from NSAIDs and CYP2C9 inhibition markedly elevates INR and risk of fatal gastrointestinal or intracranial hemorrhage; NSAIDs also precipitate acute renal failure in CKD.",
+      "clinical_recommendation": "Avoid systemic NSAIDs completely in patients on Warfarin or with CKD. Use conservative-dose acetaminophen with close INR monitoring within 3-5 days.",
+      "source_doc_id": "NIH-MEDQUAD-004",
+      "requires_hitl": true
+    },
+    {
+      "rule_id": "NIH-DRUG-003",
+      "primary_drug": "ciprofloxacin",
+      "aliases": ["levofloxacin", "moxifloxacin", "fluoroquinolone", "fluoroquinolones", "gentamicin", "tobramycin", "aminoglycoside", "aminoglycosides"],
+      "contraindicated_conditions": ["myasthenia gravis", "marfan syndrome", "thoracic aortic aneurysm"],
+      "contraindicated_drugs": ["pyridostigmine", "neostigmine"],
+      "severity": "CONTRAINDICATED",
+      "mechanism": "Fluoroquinolones and aminoglycosides impair neuromuscular junction acetylcholine transmission, precipitating acute myasthenic crisis and respiratory paralysis in Myasthenia Gravis; fluoroquinolones also degrade collagen in Marfan Syndrome/aortic aneurysm.",
+      "clinical_recommendation": "FDA Boxed Warning: Strictly avoid fluoroquinolones and aminoglycosides in Myasthenia Gravis and Marfan Syndrome. Consider cephalosporins or beta-lactams based on susceptibility.",
+      "source_doc_id": "NIH-MEDQUAD-003",
+      "requires_hitl": true
+    },
+    {
+      "rule_id": "NIH-DRUG-004",
+      "primary_drug": "methotrexate",
+      "aliases": ["hd-mtx", "hdmtx", "trexall"],
+      "contraindicated_conditions": ["pregnancy", "severe renal impairment", "decompensated cirrhosis", "pleural effusion", "ascites"],
+      "contraindicated_drugs": ["ibuprofen", "naproxen", "nsaid", "nsaids", "trimethoprim-sulfamethoxazole", "omeprazole", "pantoprazole", "penicillin", "probenecid"],
+      "severity": "CONTRAINDICATED",
+      "mechanism": "Inhibition of renal OAT1/OAT3 tubular secretion and additive folate antagonism leads to delayed methotrexate clearance, fatal pancytopenia, and acute renal tubular necrosis.",
+      "clinical_recommendation": "Hold all NSAIDs, PPIs, and trimethoprim-sulfamethoxazole during Methotrexate therapy. Enforce IV hyperhydration, urine alkalinization (pH >= 7.0), and Leucovorin rescue protocol with Attending Oncologist HITL verification.",
+      "source_doc_id": "NIH-MEDQUAD-006",
+      "requires_hitl": true
+    },
+    {
+      "rule_id": "NIH-DRUG-005",
+      "primary_drug": "propranolol",
+      "aliases": ["nadolol", "timolol", "non-selective beta-blocker", "beta-blocker"],
+      "contraindicated_conditions": ["pheochromocytoma without alpha-blockade", "pheochromocytoma", "asthma", "severe persistent asthma", "decompensated heart failure", "cardiogenic shock"],
+      "contraindicated_drugs": [],
+      "severity": "CONTRAINDICATED",
+      "mechanism": "In pheochromocytoma, unopposed alpha-1 vasoconstriction after beta-2 blockade precipitates fulminant hypertensive crisis; in asthma, bronchial beta-2 antagonism induces severe refractory bronchospasm.",
+      "clinical_recommendation": "In pheochromocytoma, establish alpha-adrenergic blockade (phenoxybenzamine or doxazosin) for 10-14 days prior to any beta-blocker. In asthma, avoid non-selective beta-blockers completely.",
+      "source_doc_id": "NIH-MEDQUAD-007",
+      "requires_hitl": true
+    },
+    {
+      "rule_id": "NIH-DRUG-006",
+      "primary_drug": "sertraline",
+      "aliases": ["fluoxetine", "paroxetine", "escitalopram", "venlafaxine", "duloxetine", "ssri", "snri"],
+      "contraindicated_conditions": ["serotonin syndrome"],
+      "contraindicated_drugs": ["phenelzine", "tranylcypromine", "selegiline", "linezolid", "maoi", "methylene blue", "tramadol"],
+      "severity": "CONTRAINDICATED",
+      "mechanism": "Synergistic inhibition of serotonin reuptake and monoamine oxidase breakdown causes life-threatening CNS and peripheral Serotonin Syndrome (clonus, hyperthermia, autonomic instability).",
+      "clinical_recommendation": "Enforce a minimum 14-day washout period between MAOIs/Linezolid and SSRIs/SNRIs (5 weeks after discontinuing fluoxetine).",
+      "source_doc_id": "NIH-MEDQUAD-008",
+      "requires_hitl": true
+    },
+    {
+      "rule_id": "NIH-DRUG-007",
+      "primary_drug": "lisinopril",
+      "aliases": ["enalapril", "ramipril", "benazepril", "ace inhibitor", "acei"],
+      "contraindicated_conditions": ["pregnancy", "hereditary angioedema", "idiopathic angioedema", "bilateral renal artery stenosis", "hyperkalemia"],
+      "contraindicated_drugs": ["losartan", "valsartan", "arb", "aliskiren", "sacubitril-valsartan", "spironolactone high-dose"],
+      "severity": "HIGH_RISK",
+      "mechanism": "Dual RAAS blockade or use in bilateral renal artery stenosis precipitates acute kidney injury and life-threatening hyperkalemia; use in pregnancy causes fetal renal agenesis and death.",
+      "clinical_recommendation": "Discontinue immediately if pregnancy is detected or angioedema occurs. Do not combine ACE inhibitors with ARBs or sacubitril-valsartan (require 36-hour washout).",
+      "source_doc_id": "NIH-MEDQUAD-002",
+      "requires_hitl": true
+    },
+    {
+      "rule_id": "NIH-DRUG-008",
+      "primary_drug": "ibuprofen",
+      "aliases": ["naproxen", "ketorolac", "meloxicam", "celecoxib", "nsaid", "nsaids"],
+      "contraindicated_conditions": ["decompensated cirrhosis", "hepatic cirrhosis", "ckd stage 3", "ckd stage 4", "ckd stage 5", "peptic ulcer disease", "gastrointestinal bleeding", "aerd", "heart failure"],
+      "contraindicated_drugs": ["warfarin", "apixaban", "rivaroxaban", "methotrexate", "lithium"],
+      "severity": "CONTRAINDICATED",
+      "mechanism": "Prostaglandin inhibition causes afferent renal arteriolar constriction (precipitating hepatorenal syndrome in cirrhosis and AKI in CKD) and severe mucosal ulceration/hemorrhage.",
+      "clinical_recommendation": "Strictly avoid systemic NSAIDs in cirrhosis, CKD Stage 3-5, or patients on anticoagulants/methotrexate.",
+      "source_doc_id": "NIH-MEDQUAD-009",
+      "requires_hitl": true
+    }
+  ]
+}

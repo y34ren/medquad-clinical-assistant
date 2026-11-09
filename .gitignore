@@ -1,0 +1,34 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments & local env secrets
+.venv/
+venv/
+env/
+.env
+.env.*
+*.pem
+*.key
+*credentials*.json
+*service-account*.json
+
+# Runtime SQLite databases & rotating JSONL audit logs (keep seeded JSON corpus tracked)
+data/*.sqlite3
+data/*.sqlite3-journal
+logs/*.jsonl
+logs/*.jsonl.*
+
+# Terraform local state
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+
+# OS / IDE artifacts
+.DS_Store
+.idea/
+.vscode/
